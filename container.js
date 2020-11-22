@@ -3,7 +3,7 @@ const path = require("path")
 const container = dependable.container();
 const simpleDependancies = [
     ['_','lodash'],
-     
+    ["mongoose","mongoose"], 
 
 ];
 simpleDependancies.forEach(function(val){
@@ -13,6 +13,7 @@ simpleDependancies.forEach(function(val){
 })
 container.load(path.join(__dirname,'/controllers'))
 container.load(path.join(__dirname,'/helpers'))
+// container.load(path.join(__dirname,'/models'))
 container.register('container',function(){
     return container;
 })
