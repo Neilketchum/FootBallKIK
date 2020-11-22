@@ -14,15 +14,14 @@ container.resolve(function(users){
         server.listen(8080,function(){
             console.log(`server running at port 8080`)
         })
+        configureExpress(app);
+          // Set up Router
         const router = require('express-promise-router')();
         users.SetRouting(router);
         
     
         app.use(router);
     }
-  
-   
-
     function configureExpress(app){
         app.use(express.static('public'));
         app.set('view engine','ejs');

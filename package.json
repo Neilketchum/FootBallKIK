@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "author": "Daipayan Hati",
   "license": "ISC",
@@ -15,6 +16,7 @@
     "express": "^4.17.1",
     "express-promise-router": "^4.0.1",
     "http": "0.0.1-security",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "nodemon": "^2.0.6"
   }
 }
