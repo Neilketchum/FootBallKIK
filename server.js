@@ -43,6 +43,7 @@ container.resolve(function (users) {
         app.use(router);
     }
     function configureExpress(app) {
+        require('./Passport/passport-local');
         app.use(express.static('public'));
         app.set('view engine', "ejs");
         app.set(bodyParser.json());
@@ -51,7 +52,7 @@ container.resolve(function (users) {
         app.use(session({
             secret: "janclncaklnkcnalcnlkcnxcnca",
             resave: "true",
-            saveUninitialized: true,
+            saveUninitialized: false,
             store: new MongoStore({ mongooseConnection: mongoose.connection })
         }))
         app.use(flash())

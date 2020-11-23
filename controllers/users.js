@@ -5,8 +5,8 @@ module.exports = function(_,passport){
         SetRouting : function(router){
             router.get('/',this.indexPage);
             router.get('/signup',this.signupPage);
-            router.get('home',this.homePage)
-            router.post('/signup',this.postSignup)
+            router.get('/home',this.homePage)
+            router.post('/signup',this.postSignUp)
         },
         indexPage:function(req,res){
             return res.render('index',{test:"This is Test"})
@@ -17,10 +17,10 @@ module.exports = function(_,passport){
         homePage:function(req,res){
             return res.render('home')
         },
-        postSignup:passport.authenticate('local.signup',{
-            successRedirect:'/home',
+        postSignUp: passport.authenticate('local.signup', {
+            successRedirect: '/home',
             failureRedirect: '/signup',
-            failureFlash:true,
-        })
+            failureFlash: true
+        }),
     }
 }
